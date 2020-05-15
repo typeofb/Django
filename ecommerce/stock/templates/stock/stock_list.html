@@ -1,3 +1,53 @@
+<!DOCTYPE html>
 <html>
-    <p>Hello World!</p>
+
+<head>
+</head>
+
+<body>
+  <table border='1'>
+    <tr>
+      <th>chk</th>
+      <th>id</th>
+      <th>category</th>
+      <th>name</th>
+      <th>price</th>
+      <th>cnt</th>
+      <th>img</th>
+    </tr>
+    {% for stock in stocks %}
+    <tr>
+      <td>
+        {% if stock.cnt == 0 %}
+          <input type='checkbox' disabled />
+        {% else %}
+          <input type='checkbox' />
+        {% endif %}
+      </td>
+      <td>
+        {{ stock.id }}
+      </td>
+      <td>
+        {{ stock.category }}
+      </td>
+      <td>
+        {{ stock.name }}
+      </td>
+      <td>
+        {{ stock.price }}
+      </td>
+      <td>
+        {{ stock.cnt }}
+      </td>
+      <td>
+        <img src='/images/{{ stock.img }}' height='200px' width='200px'>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+
+<footer>
+</footer>
+
 </html>
